@@ -1,22 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Site</title>
+  <title>Youtube Fırsat</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin:0;
-      background:#111;
+      background:#0f0f0f;
       color:white;
-      font-family:Arial;
+      font-family:'Inter', sans-serif;
+    }
+
+    header {
+      padding:20px 40px;
       display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo {
+      font-weight:700;
+      font-size:20px;
+    }
+
+    nav a {
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      opacity:0.7;
+    }
+
+    nav a:hover {
+      opacity:1;
+    }
+
+    .hero {
+      height:80vh;
+      display:flex;
+      flex-direction:column;
       justify-content:center;
       align-items:center;
-      height:100vh;
       text-align:center;
     }
+
+    .hero h1 {
+      font-size:60px;
+      margin:0;
+    }
+
+    .hero p {
+      margin-top:20px;
+      opacity:0.6;
+      font-size:20px;
+    }
+
+    .btn {
+      margin-top:30px;
+      padding:15px 35px;
+      background:#ff0033;
+      border:none;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      border-radius:5px;
+    }
+
+    .section {
+      padding:100px 40px;
+      text-align:center;
+    }
+
+    .cards {
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      margin-top:40px;
+      flex-wrap:wrap;
+    }
+
+    .card {
+      background:#1a1a1a;
+      padding:40px;
+      width:250px;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .card:hover {
+      transform:translateY(-10px);
+      background:#222;
+    }
+
   </style>
 </head>
 <body>
-  <h1>Site Yayında 🚀</h1>
+
+<header>
+  <div class="logo">Youtube Fırsat</div>
+  <nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Hakkında</a>
+    <a href="#">İletişim</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Fırsatları Keşfet</h1>
+  <p>En iyi YouTube analizleri ve stratejileri burada.</p>
+  <button class="btn">Başla</button>
+</section>
+
+<section class="section">
+  <h2>Hizmetler</h2>
+  <div class="cards">
+    <div class="card">Kanal Analizi</div>
+    <div class="card">SEO Stratejisi</div>
+    <div class="card">Başlık Psikolojisi</div>
+  </div>
+</section>
+
 </body>
 </html>
