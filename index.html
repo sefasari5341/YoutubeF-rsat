@@ -1,170 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YouTube Fırsat</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin:0;
-      font-family:'Inter', sans-serif;
-      background:#0d0d0d;
-      color:white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Fırsat</title>
+<style>
 
-    header {
-      padding:25px 50px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+body{
+margin:0;
+font-family:Arial;
+background:#0f0f0f;
+color:white;
+}
 
-    .logo {
-      font-weight:800;
-      font-size:22px;
-    }
+header{
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+}
 
-    .hero {
-      height:80vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-    }
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
 
-    .hero h1 {
-      font-size:64px;
-      margin:0;
-      font-weight:800;
-    }
+.hero h1{
+font-size:60px;
+margin:0;
+}
 
-    .hero p {
-      margin-top:20px;
-      font-size:20px;
-      opacity:0.6;
-    }
+.btn{
+margin-top:30px;
+padding:15px 35px;
+background:red;
+border:none;
+color:white;
+cursor:pointer;
+}
 
-    .btn {
-      margin-top:30px;
-      padding:16px 40px;
-      font-size:18px;
-      background:#ff0033;
-      border:none;
-      color:white;
-      cursor:pointer;
-      border-radius:6px;
-      transition:0.3s;
-    }
+.section{
+padding:100px 40px;
+background:#111;
+}
 
-    .btn:hover {
-      transform:scale(1.05);
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-    .section {
-      padding:100px 50px;
-    }
+.card{
+background:#1e1e1e;
+padding:20px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
 
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:30px;
-    }
+.card:hover{
+transform:translateY(-5px);
+background:#2a2a2a;
+}
 
-    .card {
-      background:#1a1a1a;
-      padding:25px;
-      border-radius:10px;
-      transition:0.3s;
-      cursor:pointer;
-    }
-
-    .card:hover {
-      transform:translateY(-10px);
-      background:#222;
-    }
-
-    .card h3 {
-      margin:0 0 10px 0;
-    }
-
-    .card p {
-      opacity:0.6;
-      font-size:14px;
-    }
-
-    footer {
-      text-align:center;
-      padding:40px;
-      opacity:0.4;
-      font-size:14px;
-    }
-
-  </style>
+</style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">YT Fırsat</div>
+<div>YouTube Fırsat</div>
 </header>
 
-<section class="hero">
-  <h1>Fırsat Kanallarını Keşfet</h1>
-  <p>En hızlı büyüyen ve fırsat içeren YouTube kanalları</p>
-  <button class="btn" onclick="scrollToSection()">Kanalları Gör</button>
-</section>
+<div class="hero">
+<h1>Fırsatları Keşfet</h1>
+<button class="btn" onclick="document.getElementById('kanallar').scrollIntoView({behavior:'smooth'})">
+Başla
+</button>
+</div>
 
-<section class="section" id="channels">
-  <h2 style="text-align:center; margin-bottom:50px;">Önerilen Kanallar</h2>
-  <div class="grid" id="channelList"></div>
-</section>
+<div class="section" id="kanallar">
+<h2>Fırsat Kanalları</h2>
+<div class="grid">
 
-<footer>
-  © 2026 YT Fırsat Platformu
-</footer>
+<div class="card" onclick="window.open('https://youtube.com','_blank')">
+<h3>AI Fırsat Kanalı</h3>
+<p>Yapay zeka trend analizleri</p>
+</div>
 
-<script>
-const channels = [
-  {
-    name: "Crypto Fırsat",
-    description: "Yeni çıkan coin analizleri ve erken fırsatlar.",
-    link: "https://youtube.com"
-  },
-  {
-    name: "AI Tool Radar",
-    description: "Yeni çıkan yapay zeka araçları ve fırsatlar.",
-    link: "https://youtube.com"
-  },
-  {
-    name: "Faceless Growth",
-    description: "Yüzsüz YouTube kanal fırsatları.",
-    link: "https://youtube.com"
-  },
-  {
-    name: "Global Trend Hunter",
-    description: "Trend olan global içerik analizleri.",
-    link: "https://youtube.com"
-  }
-];
+<div class="card" onclick="window.open('https://youtube.com','_blank')">
+<h3>Crypto Radar</h3>
+<p>Yeni coin fırsatları</p>
+</div>
 
-const container = document.getElementById("channelList");
+<div class="card" onclick="window.open('https://youtube.com','_blank')">
+<h3>Faceless Growth</h3>
+<p>Yüzsüz kanal fikirleri</p>
+</div>
 
-channels.forEach(channel => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.innerHTML = `
-    <h3>${channel.name}</h3>
-    <p>${channel.description}</p>
-  `;
-  card.onclick = () => window.open(channel.link, "_blank");
-  container.appendChild(card);
-});
-
-function scrollToSection(){
-  document.getElementById("channels").scrollIntoView({behavior:"smooth"});
-}
-</script>
+</div>
+</div>
 
 </body>
 </html>
