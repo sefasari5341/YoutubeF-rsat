@@ -1,125 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Youtube Fırsat</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Ozillo Style Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       margin:0;
+      font-family: Arial, sans-serif;
       background:#0f0f0f;
       color:white;
-      font-family:'Inter', sans-serif;
-    }
-
-    header {
-      padding:20px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-
-    .logo {
-      font-weight:700;
-      font-size:20px;
-    }
-
-    nav a {
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      opacity:0.7;
-    }
-
-    nav a:hover {
-      opacity:1;
     }
 
     .hero {
-      height:80vh;
+      height:90vh;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
       text-align:center;
+      animation:fadeIn 1.4s ease-in-out;
     }
 
     .hero h1 {
-      font-size:60px;
+      font-size:70px;
+      font-weight:900;
       margin:0;
     }
 
     .hero p {
-      margin-top:20px;
-      opacity:0.6;
-      font-size:20px;
+      font-size:24px;
+      opacity:0.7;
     }
 
     .btn {
       margin-top:30px;
-      padding:15px 35px;
-      background:#ff0033;
+      padding:18px 48px;
+      background:#ff0044;
       border:none;
       color:white;
-      font-size:18px;
+      font-size:20px;
       cursor:pointer;
-      border-radius:5px;
+      border-radius:6px;
+      transition:0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.04);
+      background:#d3003a;
     }
 
     .section {
-      padding:100px 40px;
-      text-align:center;
+      padding:80px 40px;
     }
 
     .cards {
       display:flex;
+      gap:30px;
       justify-content:center;
-      gap:40px;
-      margin-top:40px;
       flex-wrap:wrap;
     }
 
     .card {
-      background:#1a1a1a;
-      padding:40px;
-      width:250px;
+      background:#1c1c1c;
+      padding:30px;
+      width:260px;
       border-radius:10px;
-      transition:0.3s;
+      transition:0.4s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background:#262626;
     }
 
-    .card:hover {
-      transform:translateY(-10px);
-      background:#222;
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(30px);}
+      to {opacity:1; transform:translateY(0);}
     }
 
   </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">Youtube Fırsat</div>
-  <nav>
-    <a href="#">Ana Sayfa</a>
-    <a href="#">Hakkında</a>
-    <a href="#">İletişim</a>
-  </nav>
-</header>
+<div class="hero">
+  <h1>Ozillo Style Site</h1>
+  <p>Modern, temiz, etkileyici ilk sayfa.</p>
+  <button class="btn">Keşfet</button>
+</div>
 
-<section class="hero">
-  <h1>Fırsatları Keşfet</h1>
-  <p>En iyi YouTube analizleri ve stratejileri burada.</p>
-  <button class="btn">Başla</button>
-</section>
-
-<section class="section">
-  <h2>Hizmetler</h2>
+<div class="section">
+  <h2 style="text-align:center;">Neden Biz?</h2>
   <div class="cards">
-    <div class="card">Kanal Analizi</div>
-    <div class="card">SEO Stratejisi</div>
-    <div class="card">Başlık Psikolojisi</div>
+    <div class="card">Hızlı</div>
+    <div class="card">Modern</div>
+    <div class="card">Minimal</div>
   </div>
-</section>
+</div>
 
 </body>
 </html>
